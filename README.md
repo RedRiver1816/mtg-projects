@@ -10,7 +10,13 @@ The tool returns a DataFrame object which contains each individual deck as a row
 
 ## :detective: MtG Card Reccomendations
 These tools analyze the relationships between cards in decks and, when provided the input of a card name and a chosen DataFrame, reccomends the top 10 cards that are most played with that specific card across all of the top decks. 
-### Method 1: Number of Cards Matters
+### Method 1: Number of Cards Dependent
 This method reccomends the cards that are played most with the input, considering the number of copies. A potential upside of this method is that cards played more often are more likely to be useful, however a small number of decks that play the maximum number of cards (4x) can skew the results.
-### Method 2: Number of Cards Doesn't Matter
-This method reccomends the cards that are played most with the input, independent of the number of copies. This allows for cards that are played at smaller numbers regularly to appear, however it also artifically elevates the prevalence of lands. 
+### Method 2: Number of Cards Independent
+This method reccomends the cards that are played most with the input, independent of the number of copies. This allows for cards that are played at smaller numbers regularly to appear, however it also artifically elevates the prevalence of lands and other cards that are played in small quantities. 
+### Limitations
+Given the relatively low number of deck archetypes played competitively, it is difficult for this reccomendation system to "break the mold" and allow for innovation beyond the decks that are already published. This could be mitigated by collecting decks from sources besides the official Wizards website such as [TappedOut](https://www.tappedout.com), but this could also introduce decks that have not been competitively proven. 
+
+## :chart_with_upwards_trend: Future Directions
+### Scryfall API Integration
+By combining the DataFrame output with the large number of datapoints available from [Scryfall](https://www.scryfall.com/), such as card color, card type, mana value, and price, this would allow for significantly more in-depth analysis of deck specifics. 
